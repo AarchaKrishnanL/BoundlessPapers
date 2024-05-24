@@ -1,0 +1,25 @@
+.card-height-200 {
+    height: 200px;
+  }
+
+
+
+  .card-list{
+    float: left;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+
+  .add-new{
+    float: right;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .gap {
+    
+    padding-left: 20px;
+  }

@@ -1,0 +1,105 @@
+/* Reset styles */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.jumbotron {
+  position: relative;
+  height: 700px;
+  background-image: url('https://wallpapercave.com/wp/wp2036967.jpg');
+  /* background-image: url('https://t4.ftcdn.net/jpg/03/13/59/83/240_F_313598338_vucDG0sfBP1zryid0LG5b33gyh15Njz9.jpgg'); */
+  background-size: cover;
+  background-position: center;
+  margin-top: 0; /* Add this line to remove the gap */
+  padding: 0;
+}
+
+/* Jumbotron styles */
+/* .jumbotron {
+  position: relative;
+  height: 700px;
+  background-image: url('https://wallpapercave.com/wp/wp2036967.jpg');
+  background-size: cover;
+  background-position: center;
+} */
+
+.jumbotron-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(73, 65, 49, 0.5);
+  backdrop-filter: blur(0.8px);
+}
+
+
+
+.hero-section {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn-main {
+  background-color: #333;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  padding: 16px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.login-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-message p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Footer styles */
+/* (Add your footer styles here) */
+.footer {
+  background-color: #333;
+  color: #fff;
+  /* padding: 30px 0; */
+  text-align: center;
+}
+
+.footer p {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+}

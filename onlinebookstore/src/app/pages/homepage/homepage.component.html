@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="jumbotron">
+  <div class="jumbotron-overlay"></div>
+  <div class="container">
+    <div class="main">
+      <section class="hero-section">
+        <div class="hero-content">
+
+          <h3 class="greeting">{{ greeting }}</h3>
+
+          <h1>Welcome to Bookworm Emporium</h1>
+          <p>Your Gateway to Endless Literary Discoveries</p>
+          <p>
+            At Bookworm Emporium, we're passionate about connecting book lovers
+            with the stories that captivate their hearts and minds. As an online
+            book store dedicated to providing an exceptional shopping experience,
+            we offer a curated selection of the latest releases, beloved
+            classics, and hidden literary gems.
+          </p>
+          <button id="def" class="btn-main" (click)="showLoginMessage()">Get Start by login</button>
+          <div class="login-message" *ngIf="showMessage">
+            <p>The website requires you to log in. If you haven't done so already, please register and then you can log in to proceed..</p>
+          </div>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+
+  
+
+</div>
+<app-footer></app-footer>
+

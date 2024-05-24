@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+  }
+  
+  .about-section {
+    background: url("https://media.istockphoto.com/id/613540860/photo/creative-e-learning-concept-book-and-laptop.webp?b=1&s=170667a&w=0&k=20&c=LjS48dDaI_xNn3gA9ONlALJcy5BSkmRZZ_8WW7PCDYY=") no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+  }
+  
+  .inner-container {
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 10px;
+  }
+  
+  .inner-container h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+  }
+  
+  .text {
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .skills {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  
+  .features-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    background-color: #f1f1f1;
+  }
+  
+  .feature-item {
+    text-align: center;
+    margin: 0 40px;
+  }
+  
+  .feature-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .feature-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item p {
+    font-size: 14px;
+    color: #545454;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+  }
+  
+  .footer p {
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .inner-container {
+      padding: 80px;
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .about-section {
+      background-size: 100%;
+      padding: 100px 40px;
+    }
+    .inner-container {
+      width: 100%;
+    }
+    .features-section {
+      flex-direction: column;
+    }
+    .feature-item {
+      margin: 40px 0;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .about-section {
+      padding: 0;
+    }
+    .inner-container {
+      padding: 60px;
+    }
+    .feature-item img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  

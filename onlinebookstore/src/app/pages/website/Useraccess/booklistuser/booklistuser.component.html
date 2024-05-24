@@ -1,0 +1,106 @@
+<div class="row">
+    <div [ngClass]="isSidePanelVisible ? 'col-7' : 'col-12'" class="col-8">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-6"> Book List </div>
+            <div class="col-6 text-end">
+              <div class="gap">
+                <button class="btn btn-sm btn-success me-2" (click)="openSidePanel('add')">orderbook</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div *ngFor="let book of books">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="card">
+                      <!-- <img [src]="book.imageURL" alt="Book Image"> -->
+                      <!-- <img [src]="book.imageURL" alt="Book Image" class="img-fluid"> -->
+                      <img [src]="book.imageURL || 'https://www.bookswagon.com/productimages/images200/676/9780143452676.jpg'" alt="Book Image" class="img-fluid">
+
+
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4 class="card-text">BookId : {{ book.bookId }}</h4>
+                    <p class="card-text">Book Name : {{ book.bookName }}</p>
+                    <p class="card-text">Book Author : {{ book.bookAuthor }}</p>
+                    <p class="card-text">Price : {{ book.price }}</p>
+                    <!-- <p class="card-text"> ImageURL : {{ book.imageURL }}</p> -->
+                    <!-- <img [src]="book.imageURL" alt="Book Image" class="img-fluid"> -->
+
+                    <button class="btn btn-sm btn-primary me-2" (click)="openSidePanel('update', book)"> update order </button>
+                    <button class="btn btn-sm btn-secondary me-2" (click)="deleteBook(book.bookId)"> Delete order</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-3 add-new" *ngIf="isSidePanelVisible">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-4"> {{ sidePanel.title }} </div>
+            <div class="col-4 text-end">
+              <button class="btn btn-sm btn-success" (click)="closeSidePanel()">close</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <label for="">bookName</label>
+                <input type="text" [(ngModel)]="sidePanel.bookName" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" required>
+              </div>
+              <div class="col-6">
+                <label for="">bookAuthor</label>
+                <input type="text" [(ngModel)]="sidePanel.bookAuthor" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" required>
+              </div>
+              <div class="col-6">
+                <label for="">bookDescription</label>
+                <input type="text" [(ngModel)]="sidePanel.bookDescription" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="yy" class="form-control" required>
+              </div>
+              <div class="col-6">
+                <label for="">price</label>
+                <input type="text" [(ngModel)]="sidePanel.price" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="81234" class="form-control" required>
+              </div>
+              <!-- <div class="col-6">
+                <label for="">ImageURL</label>
+                <input type="text" [(ngModel)]="sidePanel.imageURL" [ngModelOptions]="{standalone:true}" name="" required="" placeholder=".." class="form-control" required>
+             
+              </div> -->
+
+              <!-- <div class="col-6">
+                <label for="">ImageURL</label>
+                <input type="file" (change)="onFileSelected($event)" [ngModelOptions]="{standalone:true}" class="form-control" required>
+              </div>
+               -->
+               <!-- <div class="col-6">
+                <label for="">ImageURL</label>
+                <input type="file" (change)="onFileSelected($event)" class="form-control" required>
+              </div> -->
+              <div class="col-6">
+                <label for="">ImageURL</label>
+                <input type="file" (change)="onFileSelected($event)" class="form-control" required>
+              </div>
+              
+              
+              <div class="col-6">
+                <button class="btn btn-success" (click)="onSave()"> {{ sidePanel.btnText }} </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,364 @@
+
+<!-- <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Book Store</a>
+      <div class="d-flex">
+        <button class="btn btn-sm btn-outline-light me-2" routerLink="">Home</button>
+        <button class="btn btn-sm btn-outline-light me-2" routerLink="/user-orderpage">View Orders</button>
+       
+        <button class="btn btn-sm btn-outline-light me-2 " (click)="logout()">Log-out</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row mt-4">
+    <div [ngClass]="isOrderListVisible ? 'col-12' : 'col-md-8'">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let book of books">
+              <div class="card h-100 shadow-sm">
+                <img [src]="book.imageURl || 'https://via.placeholder.com/150'" class="card-img-top" alt="Book Image">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.bookName }}</h5>
+                  <p class="card-text">Author: {{ book.bookAuthor }}</p>
+                  <p class="card-text">{{ book.bookDescription }}</p>
+                  <p class="card-text">Price: ${{ book.price }}</p>
+                  
+                  <div class="d-flex justify-content-end">
+                    <button class="btn btn-sm btn-primary" (click)="openOrderSidePanel(book)">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 add-new" *ngIf="isOrderSidePanelVisible">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h5 class="mb-0">{{ orderSidePanel.title }}</h5>
+            </div>
+            <div class="col-4 text-end">
+              <button class="btn btn-sm btn-success" (click)="closeOrderSidePanel()"> close
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="bookName" class="form-label">Book Name</label>
+              <input type="text" class="form-control" id="bookName" [(ngModel)]="orderSidePanel.bookName" [ngModelOptions]="{standalone:true}" readonly  >
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label">Quantity</label>
+              <input type="number" class="form-control" id="quantity" [(ngModel)]="orderSidePanel.noOfBooks" [ngModelOptions]="{standalone:true}" min="1">
+            </div>
+            <div class="mb-3">
+              <label for="totalPrice" class="form-label">Total Price</label>
+              <input type="text" class="form-control" id="totalPrice" [(ngModel)]="orderSidePanel.total_Price" [ngModelOptions]="{standalone:true}" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="orderDate" class="form-label">Order Date</label>
+              <input type="text" class="form-control" id="orderDate" [(ngModel)]="orderSidePanel.orderDate" [ngModelOptions]="{standalone:true}" readonly>
+            </div>
+            <button type="button" class="btn btn-success" (click)="placeOrder()">{{ orderSidePanel.btnText }}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">Book Store</a>
+    <div class="d-flex">
+      <button class="btn btn-sm btn-outline-light me-2" routerLink="">Home</button>
+      <button class="btn btn-sm btn-outline-light me-2" routerLink="/user-orderpage">View Orders</button>
+     
+      <button class="btn btn-sm btn-outline-light me-2 " (click)="logout()">Log-out</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row mt-4">
+    <div [ngClass]="isOrderListVisible ? 'col-12' : 'col-md-8'">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col" *ngFor="let book of books">
+              <div class="card h-100 shadow-sm">
+                <img [src]="book.imageURl || 'https://via.placeholder.com/150'" class="card-img-top" alt="Book Image">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.bookName }}</h5>
+                  <p class="card-text font-weight-bold">Author: {{ book.bookAuthor }}</p>
+                  <p class="card-text">{{ book.bookDescription }}</p>
+                  <div class="d-flex justify-content-between align-items-end">
+                    <p class="card-text font-weight-bold price">Price: ${{ book.price }}</p>
+                    <button class="btn btn-sm btn-primary" (click)="openOrderSidePanel(book)">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 add-new" *ngIf="isOrderSidePanelVisible">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h5 class="mb-0">{{ orderSidePanel.title }}</h5>
+            </div>
+            <div class="col-4 text-end">
+              <button class="btn btn-sm btn-success" (click)="closeOrderSidePanel()"> close
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="bookName" class="form-label">Book Name</label>
+              <input type="text" class="form-control" id="bookName" [(ngModel)]="orderSidePanel.bookName" [ngModelOptions]="{standalone:true}" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label">Quantity</label>
+              <input type="number" class="form-control" id="quantity" [(ngModel)]="orderSidePanel.noOfBooks" [ngModelOptions]="{standalone:true}" min="1">
+            </div>
+            <div class="mb-3">
+              <label for="totalPrice" class="form-label">Total Price</label>
+              <input type="text" class="form-control" id="totalPrice" [(ngModel)]="orderSidePanel.total_Price" [ngModelOptions]="{standalone:true}" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="orderDate" class="form-label">Order Date</label>
+              <input type="text" class="form-control" id="orderDate" [(ngModel)]="orderSidePanel.orderDate" [ngModelOptions]="{standalone:true}" readonly>
+            </div>
+            <button type="button" class="btn btn-success" (click)="placeOrder()">{{ orderSidePanel.btnText }}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===========kavin====================== -->
+
+
+<!-- <div class="row">
+     <div [ngClass]="isOrderListVisible ? 'col-7':'col-9'" class="col-8">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-8"> book store </div>
+            <div class="col-8 text-end">
+              <div class="gap">
+                <button class="btn btn-sm btn-info me-2" (click)="viewOrders()">View Orders</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div *ngFor="let book of books">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="card">
+                      <img [src]="book.imageURl || 'https://www.bookswagon.com/productimages/images200/676/9780143452676.jpg'" alt="Book Image" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4 class="card-text">BookId : {{ book.bookId }}</h4>
+                    <p class="card-text">Book Name : {{ book.bookName }}</p>
+                    <p class="card-text">Book Author : {{ book.bookAuthor }}</p>
+                    <p class="card-text">Book Description : {{ book.bookDescription }}</p>
+                    <p class="card-text">Price : {{ book.price }}</p>
+                    <button class="btn btn-sm btn-primary" (click)="openOrderSidePanel(book)"> Order </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+      <div class="col-3 add-new" *ngIf="isOrderSidePanelVisible">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-4"> {{ orderSidePanel.title }} </div>
+            <div class="col-4 text-end">
+              <button class="btn btn-sm btn-success" (click)="closeOrderSidePanel()">close</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <label for="">Book Name</label>
+                <input type="text" [(ngModel)]="orderSidePanel.bookName" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" readonly>
+              </div>
+              <div class="col-6">
+                <label for="">Quantity</label>
+                <input type="number" [(ngModel)]="orderSidePanel.noOfBooks" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="1" class="form-control" min="1">
+              </div>
+              <div class="col-6">
+                <label for="">Total Price</label>
+                <input type="text" [(ngModel)]="orderSidePanel.total_Price" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" readonly>
+              </div>
+              <div class="col-6">
+                <label for="">Order Date</label>
+                <input type="text" [(ngModel)]="orderSidePanel.orderDate" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" readonly>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-success" (click)="placeOrder()"> {{ orderSidePanel.btnText }} </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  
+    <div class="col-8 add-new" *ngIf="isOrderListVisible">
+      <div class="one">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-4"> Orders </div>
+            <div class="col-4 text-end">
+              <button class="btn btn-sm btn-success" (click)="closeOrderSidePanel()">close</button>
+            </div>
+          </div>
+        </div>
+        <div class="one-list">
+          <div *ngFor="let order of orders">
+            <div class="one">
+              <div class="one-body">
+                <div class="row">
+                  <div class="col-6">
+                    <p class="one-text">Order ID: {{ order.orderId }}</p>
+                    <p class="one-text">Book Name: {{ order.bookName }}</p>
+                    <p class="one-text">Quantity: {{ order.noOfBooks }}</p>
+                    <p class="one-text">Total Price: {{ order.total_Price }}</p>
+                    <p class="one-text">Order Date: {{ order.orderDate | date:'yyyy-MM-dd' }}</p>
+                  </div>
+                  <div class="col-6 text-end">
+                    <button class="btn btn-sm btn-danger" (click)="cancelOrder(order.orderId)">Cancel Order</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ -->
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+
+  <!-- <div class="row">
+    <div class="col-9">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-6"> book store </div>
+            <div class="col-6 text-end">
+              <div class="gap">
+                 <button class="btn btn-sm btn-info me-2" (click)="navigateToOrderComponent()">View Orders</button> 
+                <button class="btn btn-sm btn-info me-2" routerLink="/order">View Order </button>
+                   <li routerLink="/Adminlogin"></button> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div *ngFor="let book of books">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="card">
+                      <img [src]="book.imageURL || 'https://www.bookswagon.com/productimages/images200/676/9780143452676.jpg'" alt="Book Image" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-8">
+                    <h4 class="card-text">BookId : {{ book.bookId }}</h4>
+                    <p class="card-text">Book Name : {{ book.bookName }}</p>
+                    <p class="card-text">Book Author : {{ book.bookAuthor }}</p>
+                    <p class="card-text">Book Description : {{ book.bookDescription }}</p>
+                    <p class="card-text">Price : {{ book.price }}</p>
+                    <button class="btn btn-sm btn-primary" (click)="openOrderSidePanel(book)"> Order </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-3 add-new" *ngIf="isOrderSidePanelVisible">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <div class="row">
+            <div class="col-4"> {{ orderSidePanel.title }} </div>
+            <div class="col-4 text-end">
+              <button class="btn btn-sm btn-success" (click)="closeOrderSidePanel()">close</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <label for="">Book Name</label>
+                <input type="text" [(ngModel)]="orderSidePanel.bookName" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" readonly>
+              </div>
+              <div class="col-6">
+                <label for="">Quantity</label>
+                <input type="number" [(ngModel)]="orderSidePanel.noOfBooks" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="1" class="form-control" min="1">
+              </div>
+              <div class="col-6">
+                <label for="">Total Price</label>
+                <input type="text" [(ngModel)]="orderSidePanel.total_Price" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" readonly>
+              </div>
+              <div class="col-6">
+                <label for="">Order Date</label>
+                <input type="text" [(ngModel)]="orderSidePanel.orderDate" [ngModelOptions]="{standalone:true}" name="" required="" placeholder="xxx" class="form-control" readonly>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-success" (click)="placeOrder()"> {{ orderSidePanel.btnText }} </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  

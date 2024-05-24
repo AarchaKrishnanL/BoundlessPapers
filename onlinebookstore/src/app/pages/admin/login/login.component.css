@@ -1,0 +1,286 @@
+/* html {
+  height: 100%;
+}
+
+
+
+body {
+  background-image: url('https://img.freepik.com/free-vector/vector-home-library-interior-with-large-bookcase-full-different-books-green-armchair-burning-floor-lamp_1284-48467.jpg?size=626&ext=jpg&ga=GA1.1.1989355363.1714354221&semt=ais');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.parent {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#acb6c7, #7eb1e8);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgb(249, 246, 246);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #0c0b0b;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #0e0d0d;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #131212;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #0a0a0a;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #e02424;
+  font-size: 16px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #0a0a0a;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fcfbfb);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ffffff);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ffffff);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fefbfa);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+.btn-custom {
+  background-color: #205521;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 10px;
+  text-transform: lowercase;
+  font-weight: lighter;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #055407;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+} */
+
+
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fbfbfa;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://wallpaperaccess.com/full/922682.jpg');
+  /* background-image: url('https://images.wallpapersden.com/image/download/hd-train-view-at-sunset_bmZobWmUmZqaraWkpJRmbmdlrWZmZWc.jpg'); */
+  
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur( 1px);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #783a3a;
+}
+
+.login-header p {
+  font-size: 1rem;
+  color: #824e4e;
+}
+
+.login-form {
+  width: 400px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4d90fe;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4d90fe;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #357ae8;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.login-footer a {
+  color: #4d90fe;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+#background
+{
+  background-image: url("https://th.bing.com/th?id=OIP.CLfbEQ09N7nM-Dtc3mw4cwHaEt&w=313&h=199&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2");
+}

@@ -1,0 +1,74 @@
+<!-- 
+<app-navbar></app-navbar>
+<div class="background-image"></div>
+<div class="container">
+  <div class="form-container">
+    <h2>Register</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="UserName" [ngModelOptions]="{standalone:true}" name="username" placeholder="Enter username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="Password" [ngModelOptions]="{standalone:true}" name="password" placeholder="Enter password" required>
+      </div>
+      <div class="form-group">
+        <label for="mobileNumber">Mobile Number</label>
+        <input type="tel" [(ngModel)]="MobileNumber" [ngModelOptions]="{standalone:true}" name="mobileNumber" placeholder="Enter mobile number" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="Email" [ngModelOptions]="{standalone:true}" name="email" placeholder="Enter email" required>
+      </div>
+      <button (click)="onLogin()" type="submit" class="btn-register">Register</button>
+    </form>
+    <div class="login-link">
+      <p>Already registered? <a routerLink="/userlogin">Login</a></p>
+    </div>
+  </div>
+</div>
+ -->
+ <app-navbar></app-navbar>
+ <div class="background-image"></div>
+ <div class="container">
+   <div class="form-container">
+     <h2>Register</h2>
+     <form>
+       <div class="form-group">
+         <label for="username">Username</label>
+         <input type="text" id="username" [(ngModel)]="UserName" name="username"  required autocomplete="username">
+         <div *ngIf="UserName.trim() === ''">
+           <p class="error-message">Please enter a username.</p>
+         </div>
+       </div>
+       <div class="form-group">
+         <label for="email">Email</label>
+         <input type="email" id="email" [(ngModel)]="Email" name="email" required autocomplete="email">
+         <div *ngIf="Email.trim() === '' || !isValidEmail(Email)">
+           <p class="error-message">Please enter a valid email address.</p>
+         </div>
+       </div>
+       <div class="form-group">
+         <label for="password">Password</label>
+         <input type="password" id="password" [(ngModel)]="Password" name="password"  required autocomplete="current-password">
+         <div *ngIf="Password.trim() === '' || Password.length < 6">
+           <p class="error-message">Password must be at least 6 characters long.</p>
+         </div>
+       </div>
+       <div class="form-group">
+         <label for="mobileNumber">Mobile Number</label>
+         <input type="tel" id="mobileNumber" [(ngModel)]="MobileNumber" name="mobileNumber"  required autocomplete="tel">
+         <div *ngIf="MobileNumber.trim() === '' || !isValidMobileNumber(MobileNumber)">
+           <p class="error-message">Please enter a valid 10-digit mobile number.</p>
+         </div>
+       </div>
+       <button (click)="onLogin()" type="submit" class="btn-register">Register</button>
+     </form>
+     <div class="login-link">
+       <p>Already registered? <a routerLink="/userlogin">Login</a></p>
+     </div>
+   </div>
+ </div>
+ 

@@ -1,0 +1,98 @@
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" routerLink="">Book Store</a>
+        <div class="d-flex">
+          <a class="btn btn-sm btn-outline-light me-2" routerLink="">Home</a>
+          <a class="btn btn-sm btn-outline-light me-2" routerLink="/orderpage">Orders</a>
+          
+
+          <button class="btn btn-sm btn-outline-light me-2 " (click)="logout()">Log-out</button>
+          
+          <button class="btn btn-sm btn-outline-light" (click)="openSidePanel('add')">
+            <i class="fas fa-plus"></i> Add Books
+          </button>
+          
+        </div>
+      </div>
+    </nav>
+  
+    <div class="row mt-4">
+      <div [ngClass]="isSidePanelVisible ? 'col-md-8' : 'col-md-12'">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+              <div class="col" *ngFor="let book of books">
+                <div class="card h-100 shadow-sm">
+                  <img [src]="book.imageURl || 'https://via.placeholder.com/150'" class="card-img-top" alt="Book Image">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ book.bookName }}</h5>
+                    <p class="card-text">Author: {{ book.bookAuthor }}</p>
+                    <p class="card-text">{{ book.bookDescription }}</p>
+                    <p class="card-text">Price: ${{ book.price }}</p>
+                  
+
+                    <div class="d-flex justify-content-center">
+                      <button class="btn btn-sm btn-primary me-2" (click)="openSidePanel('update', book)">
+                        <i class="fas fa-edit"></i> Update
+                      </button>
+                      <button class="btn btn-sm btn-danger" (click)="deleteBook(book.bookId)">
+                        <i class="fas fa-trash"></i> Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 add-new" *ngIf="isSidePanelVisible">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h5 class="mb-0">{{ sidePanel.title }}</h5>
+              </div>
+              <div class="col-4 text-end">
+                
+                    <button class="btn btn-sm btn-success" (click)="closeSidePanel()">close</button>
+                
+                  <i class="fas fa-times"></i>
+               
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="bookName" class="form-label">Book Name</label>
+                <input type="text" class="form-control" id="bookName" [(ngModel)]="sidePanel.bookName" [ngModelOptions]="{standalone:true}" placeholder="Enter book name" required>
+              </div>
+              <div class="mb-3">
+                <label for="bookAuthor" class="form-label">Book Author</label>
+                <input type="text" class="form-control" id="bookAuthor" [(ngModel)]="sidePanel.bookAuthor" [ngModelOptions]="{standalone:true}" placeholder="Enter book author" required>
+              </div>
+              <div class="mb-3">
+                <label for="bookDescription" class="form-label">Book Description</label>
+                <textarea class="form-control" id="bookDescription" [(ngModel)]="sidePanel.bookDescription" [ngModelOptions]="{standalone:true}" rows="3" placeholder="Enter book description" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control" id="price" [(ngModel)]="sidePanel.price" [ngModelOptions]="{standalone:true}" placeholder="Enter book price" required>
+              </div>
+              <div class="mb-3">
+                <label for="imageURl" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="imageURl" [(ngModel)]="sidePanel.imageURl" [ngModelOptions]="{standalone:true}" placeholder="Enter image URL" required>
+              </div>
+              <button type="button" class="btn btn-success" (click)="onSave()">{{ sidePanel.btnText }}</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

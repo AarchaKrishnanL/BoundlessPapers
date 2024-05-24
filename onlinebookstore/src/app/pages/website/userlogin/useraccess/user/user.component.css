@@ -1,0 +1,160 @@
+  /* .navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #fff !important;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 0.5rem;
+  }
+  
+  .card-header {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .add-new {
+    float: right;
+  }
+  
+  .gap {
+    padding-left: 20px;
+  }
+  
+  .btn-sm {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #f3eaea;
+  }
+  .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+  }
+@media (max-width: 767px) {
+  .card-img-top {
+    height: 150px;
+  }
+}
+   */
+
+
+   .navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #fff !important;
+  }
+  
+  .card {
+    border: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    height: 110%;
+    max-width: 1000px; /* Limit the max width of the card */
+    margin: 0 auto;
+  }
+  
+  .card-img-top {
+    height: 250px;
+    width: 180px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 1rem; /* Reduce the padding of the card body */
+  }
+  
+  .card-title {
+     /* Reduce the font size of the card title */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+   /* Reduce the font size of the card text */
+    margin-bottom: 0.5rem;
+  }
+  
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    /* Reduce the font size of the button */
+     /* Reduce the padding of the button */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004d99;
+  }
+  
+  .add-new {
+    float: right;
+  }
+  
+  .gap {
+    padding-left: 20px;
+  }
+  
+  .btn-sm {
+     /* Reduce the font size of the small button */
+    padding: 0.125rem 0.375rem; /* Reduce the padding of the small button */
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #f3eaea;
+  }
+  
+  @media (max-width: 767px) {
+    .card-img-top {
+      height: 150px; /* Reduce the height of the image on smaller screens */
+    }
+  }
+
+  .price {
+    color: #f62e2e; /* Set the price color to green */
+    font-weight: bold;
+  }
+  

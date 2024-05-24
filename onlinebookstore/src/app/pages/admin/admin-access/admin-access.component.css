@@ -1,0 +1,63 @@
+
+   .navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .card {
+    border: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    height: 110%;
+    max-width: 1000px; /* Limit the max width of the card */
+    margin: 0 auto;
+   
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Increase the box-shadow on hover */
+  }
+  
+  .card-header {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .card-img-top {
+    height: 250px;
+    width: 180px;
+    object-fit: cover;
+  }
+  
+  .add-new {
+    float: right;
+  }
+  
+  .btn-sm {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #f3eaea;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+   
+    /* Add spacing between buttons */
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+   
+  }
+  

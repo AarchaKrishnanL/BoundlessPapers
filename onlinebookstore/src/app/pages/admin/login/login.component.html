@@ -1,0 +1,74 @@
+<!-- <div class="parent">
+  <app-navbar></app-navbar>
+    <!DOCTYPE html>
+    <html lang="en" >
+    <head>
+      <meta charset="UTF-8">
+      <title> Login Form with light button  </title>
+    </head>
+    <body> -->
+      
+    <!-- partial:index.partial.html -->
+    
+    <!-- <div class="parent">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <div class="user-box">
+          <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone:true}" name="" required="">
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}" name="" required="">
+          <label>Password</label>
+        </div> -->
+        
+        <!-- <button (click)="onLogin()" >
+             
+          Submit
+        </button> -->
+        <!-- <button (click)="onLogin()" class="btn btn-lg btn-primary btn-block" type="submit">Let me in!</button> -->
+        <!-- <button (click)="onLogin()" class="btn btn-custom">
+          Let me in!
+        </button>
+        <br> -->
+        <!-- <p class="account-signup">Don't have an account? <a href="#">Sign up here</a> -->
+        
+      <!-- </form>
+    </div>
+    </div> -->
+    <!-- partial -->
+      
+    
+  <!-- </body>
+    </html>
+    </div> -->
+    <app-navbar></app-navbar>
+    <section id="background">
+    <div class="login-container">
+     
+      <form class="login-form">
+        <div class="form-group">
+          <div class="login-header">
+            <h2>Welcome back
+              Admin!!</h2>
+            <p>Please enter your credentials to <b>login</b> to your account.</p>
+          </div>
+          <label for="email">Email</label>
+          <input type="text" id="email" [(ngModel)]="email" [ngModelOptions]="{standalone:true}" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <!-- <img src="https://img.freepik.com/free-vector/vector-home-library-interior-with-large-bookcase-full-different-books-green-armchair-burning-floor-lamp_1284-48467.jpg?size=626&ext=jpg&ga=GA1.1.1989355363.1714354221&semt=ais"> -->
+          <label for="password">Password</label>
+          <input type="password" id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}" placeholder="Enter your password" required>
+        </div>
+        <button type="button" class="btn-login" (click)="onLogin()">
+          Log in
+        </button>
+        <!-- <div class="login-footer">
+          <p>Don't have an account? <a routerLink="/register">Sign up</a></p>
+        </div> -->
+      </form>
+    </div>
+  </section>
+    
